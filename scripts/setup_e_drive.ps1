@@ -12,6 +12,8 @@ $env:OLDCARE_RESOURCE_ROOT = $resourceRoot
 $env:PIP_CACHE_DIR = Join-Path $cacheRoot "pip"
 $env:HF_HOME = $modelRoot
 $env:TRANSFORMERS_CACHE = Join-Path $modelRoot "transformers"
+$env:CONDA_PKGS_DIRS = Join-Path $cacheRoot "conda-pkgs"
+$env:CONDA_ENVS_PATH = $pythonRoot
 
 $conda = Get-Command conda -ErrorAction SilentlyContinue
 $pythonPath = Join-Path $pythonRoot "env\python.exe"
