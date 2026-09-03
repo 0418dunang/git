@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f5b48">
+  <title>旧物新生｜家庭物品智能养护</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">旧</div><div><strong>旧物新生</strong><span>HOMECARE AI</span></div></div>
+      <div class="home-profile"><div class="avatar">林</div><div><strong>林女士的家</strong><small>低碳生活 · 12件物品</small></div><button class="icon-button" id="export-button" title="导出档案">⇩</button></div>
+      <nav class="nav-list" aria-label="主导航">
+        <button class="nav-link active" data-view="dashboard"><span>⌂</span>总览</button>
+        <button class="nav-link" data-view="diagnose"><span>✦</span>智能诊断</button>
+        <button class="nav-link" data-view="items"><span>▣</span>我的物品</button>
+        <button class="nav-link" data-view="calendar"><span>◷</span>养护日历</button>
+        <button class="nav-link" data-view="knowledge"><span>▤</span>知识库</button>
+      </nav>
+      <div class="sidebar-footer"><p><span class="online-dot"></span><strong>本地优先</strong></p><small>档案保存在当前浏览器</small><button class="outline-button" data-view="diagnose">＋ 录入一件物品</button></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div><p class="eyebrow">THURSDAY · SEP 03, 2026</p><h1 id="page-title">家庭物品总览</h1></div><div class="top-actions"><button class="quiet-button" id="notification-button" title="查看养护提醒">◔<b id="notification-count">3</b></button><button class="primary-button" data-view="diagnose">＋ 录入物品</button></div></header>
+
+      <section class="view active" id="view-dashboard">
+        <section class="welcome"><div><p class="eyebrow light">GOOD MORNING, LIN</p><h2>让家里的每一件旧物，<br><em>多用很多年。</em></h2><p>今天有 <strong id="open-task-count">3</strong> 个养护任务值得关注。</p></div><div class="welcome-symbol" aria-hidden="true">✦</div></section>
+        <div class="stats" id="stats"></div>
+        <div class="dashboard-grid"><section class="panel"><div class="section-header"><div><p class="eyebrow">MY COLLECTION</p><h2>我的物品</h2></div><button class="text-button" data-view="items">查看全部 →</button></div><div class="item-grid" id="featured-items"></div></section><section class="panel"><div class="section-header"><div><p class="eyebrow">NEXT ACTIONS</p><h2>接下来要做</h2></div><span class="tag warm">本周</span></div><div id="task-list"></div></section></div>
+        <section class="insight"><span>✦</span><div><p class="eyebrow">CARE INSIGHT</p><strong>换季前，先照顾好木质家具</strong><p>秋季空气转干，木材更容易出现细小裂缝。建议本周完成一次薄涂护理。</p></div><button class="text-button" data-view="knowledge">了解更多 →</button></section>
+      </section>
+
+      <section class="view" id="view-diagnose">
+        <div class="view-intro"><p class="eyebrow">MULTI-AGENT CARE LAB</p><h2>把问题交给六位养护专家</h2><p>上传照片并填写基本信息，系统会给出安全、易懂、能执行的养护方案。</p></div>
+        <div class="diagnose-grid">
+          <form class="panel" id="diagnose-form"><div class="section-header"><div><h2>录入物品</h2><p>信息越完整，判断越贴近真实情况</p></div><span class="step">01 / 02</span></div>
+            <label class="upload-box" for="image-input"><input type="file" id="image-input" accept="image/*"><span class="upload-arrow">↑</span><strong>点击上传物品照片</strong><small>建议拍摄整体、损坏部位和材质细节</small><img id="image-preview" alt="物品照片预览"></label>
+            <div class="form-grid"><label><span>物品名称</span><input name="name" required placeholder="例如：卧室实木柜"></label><label><span>使用年限</span><select name="age"><option value="1">1年以内</option><option value="3">1—3年</option><option value="8" selected>3—10年</option><option value="12">10年以上</option></select></label><label><span>物品类别</span><select name="category"><option value="wood">木质家具</option><option value="leather">皮具</option><option value="metal">五金金属</option><option value="fabric">布艺软装</option><option value="ceramic">陶瓷卫浴</option><option value="appliance">小家电</option></select></label><label><span>所在环境</span><select name="scene"><option>卧室</option><option>客厅</option><option>厨房</option><option>卫生间</option><option>阳台</option><option>玄关</option></select></label></div>
+            <label class="wide-field"><span>你观察到的问题</span><textarea name="notes" rows="4" placeholder="例如：柜门边缘有细小裂缝，最近雨天后更明显"></textarea></label><div class="quick-tags"><button type="button" data-note="表面有明显磨损">表面磨损</button><button type="button" data-note="局部开裂或起皮">开裂起皮</button><button type="button" data-note="有潮湿或霉味">潮湿霉味</button><button type="button" data-note="出现松动、卡顿或异响">松动卡顿</button></div><button class="primary-button full" type="submit">开始六Agent诊断 <span>→</span></button>
+          </form>
+          <section class="panel result-panel"><div class="section-header"><div><p class="eyebrow">CARE REPORT</p><h2>诊断结果</h2></div><span class="status" id="result-status">等待录入</span></div><div class="empty-result" id="empty-result"><div>✦</div><h3>还没有诊断结果</h3><p>填写左侧信息，六位Agent会依次完成识别、诊断、方案和复盘。</p></div><div class="hidden" id="result-content"><div id="diagnosis-summary"></div><div class="agent-trace" id="agent-trace"></div><div id="care-plan"></div><div id="materials"></div><button class="secondary-button full" id="save-result">保存到我的物品</button></div></section>
+        </div>
+      </section>
+
+      <section class="view" id="view-items"><div class="view-intro inline"><div><p class="eyebrow">MY ITEMS</p><h2>家里的物品档案</h2><p>每件物品都有自己的健康记录和养护节奏。</p></div><label class="search">⌕<input id="item-search" placeholder="搜索物品"></label></div><div class="filter-tabs" id="item-filters"><button class="active" data-filter="all">全部</button><button data-filter="needs">需要关注</button><button data-filter="healthy">状态良好</button></div><div class="item-grid all-items" id="all-items"></div></section>
+      <section class="view" id="view-calendar"><div class="view-intro"><p class="eyebrow">CARE CALENDAR</p><h2>养护日历</h2><p>把一次性的“想起来再做”，变成轻松的长期习惯。</p></div><div class="calendar-grid"><section class="panel"><div class="section-header"><div><p class="eyebrow">SEPTEMBER 2026</p><h2>本周任务</h2></div><span class="tag green">养护提醒</span></div><div id="calendar-list"></div></section><section class="panel health-panel"><p class="eyebrow">HOME HEALTH</p><div class="health-score"><strong id="health-score">82</strong><span>/ 100</span></div><h2>家庭物品健康度</h2><p>比上月提升 <b class="green-text">6分</b></p><div id="health-bars"></div></section></div></section>
+      <section class="view" id="view-knowledge"><div class="view-intro inline"><div><p class="eyebrow">CARE KNOWLEDGE BASE</p><h2>养护知识库</h2><p>经过整理的材质规则，帮你避开“越养越坏”的坑。</p></div><label class="search">⌕<input id="knowledge-search" placeholder="搜索材质、问题或禁忌"></label></div><div class="knowledge-grid" id="knowledge-grid"></div></section>
+    </main>
+
+    <aside class="right-rail"><div class="rail-heading"><span class="online-dot"></span><strong>Agent协作状态</strong><small>实时</small></div><div id="agent-list"></div><hr><section class="rail-card"><p class="eyebrow">本月养护价值</p><strong class="saving">¥ 386</strong><p>通过及时养护，预计减少一次物品更换。</p><div class="progress"><span></span></div><small>已完成本月养护目标 72%</small></section><section class="rail-card quote"><b>“</b><p>真正的低碳，不只是少买，而是让已经拥有的东西被好好使用。</p><small>— 旧物新生</small></section></aside>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
