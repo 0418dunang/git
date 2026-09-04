@@ -1,0 +1,15 @@
+.git/
+.github/
+.playwright-cli/
+output/
+backend/
+scripts/
+node_modules/
+README.md
+knowledge_base.json
+start_backend.ps1
+_patch_*
+wrangler.toml
+*.db
+*.sqlite
+*.sqlite3
