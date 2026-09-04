@@ -3,6 +3,7 @@
 .wrangler/
 .gitignore
 .assetsignore
+worker.js
 .playwright-cli/
 output/
 backend/
@@ -11,6 +12,9 @@ node_modules/
 README.md
 knowledge_base.json
 start_backend.ps1
+*.png
+*.yml
+*.log
 _patch_*
 wrangler.toml
 *.db

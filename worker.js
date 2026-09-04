@@ -1,4 +1,4 @@
-<!doctype html>
+const html = String.raw`<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -796,3 +796,17 @@
   </script>
 </body>
 </html>
+`;
+
+export default {
+  async fetch(request, env) {
+    if (env && env.ASSETS) {
+      const asset = await env.ASSETS.fetch(request);
+      if (asset.status !== 404) return asset;
+      return env.ASSETS.fetch(new Request(new URL("/index.html", request.url), request));
+    }
+    return new Response(html, {
+      headers: { "content-type": "text/html; charset=UTF-8", "cache-control": "no-store" }
+    });
+  }
+};

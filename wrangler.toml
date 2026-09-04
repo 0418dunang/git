@@ -1,7 +1,9 @@
 name = "topview-home-clone"
 compatibility_date = "2026-09-04"
 workers_dev = true
+main = "worker.js"
 
 [assets]
 directory = "."
+binding = "ASSETS"
 not_found_handling = "single-page-application"

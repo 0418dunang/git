@@ -1,6 +1,11 @@
 # Topview Homepage Clone
 
-一个基于原生 HTML、CSS 和 JavaScript 的 Topview 首页复刻，包含响应式布局、Composer 模式切换、案例筛选、视频播放、Canvas 模式、FAQ 和素材展示。
+This project recreates the Topview homepage as a single self-contained `index.html`.
+
+- Full navigation, hero composer, product sections, skill strip, model cards, case gallery, workflow, FAQ, CTA, and footer.
+- 12 placeholder video cards use public Unsplash poster images and native `<video>` elements without original Topview media.
+- Native JavaScript handles menus, mobile navigation, Composer modes, model selection, filters, media previews, skill dialogs, FAQ, toast feedback, and scroll reveal effects.
+- `worker.js` contains the Cloudflare Workers Static Assets entry point and an HTML-string fallback.
 
 ## Local
 
@@ -8,12 +13,12 @@
 python -m http.server 4173
 ```
 
-打开 `http://127.0.0.1:4173`。
+Open `http://127.0.0.1:4173/`.
 
-## Deploy
-
-项目使用 `wrangler.toml` 配置 Cloudflare Workers Static Assets：
+## Cloudflare Worker
 
 ```powershell
-npx wrangler deploy
+npx wrangler deploy --temporary
 ```
+
+For persistent deployment, authenticate with `npx wrangler login` and run `npx wrangler deploy`.
