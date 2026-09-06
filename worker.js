@@ -643,7 +643,17 @@ const html = String.raw`<!doctype html>
             </div>
           </div>
         </div>
-        <a class="nav-link" href="#models">Models</a>
+        <div class="nav-item">
+          <button class="nav-button" type="button" data-menu="models" aria-expanded="false">Models <span>⌄</span></button>
+          <div class="mega-menu" data-panel="models">
+            <div class="mega-grid">
+              <a class="mega-link" href="#models"><span class="mega-kicker">Motion</span><strong>Seedance 2.5</strong><small>Cinematic movement and expressive scenes.</small></a>
+              <a class="mega-link" href="#models"><span class="mega-kicker">Creation</span><strong>Wan 3.0</strong><small>High-quality daily video generation.</small></a>
+              <a class="mega-link" href="#models"><span class="mega-kicker">Story</span><strong>Seedance 2.0</strong><small>Short films, ads, and social variations.</small></a>
+              <a class="mega-link" href="#models"><span class="mega-kicker">Fast</span><strong>MiniMax H3</strong><small>Product stories and creator-led clips.</small></a>
+            </div>
+          </div>
+        </div>
         <a class="nav-link" href="#skills">MCP / Skill</a>
         <a class="nav-link" href="#footer">Plugin</a>
         <a class="nav-link" href="#footer">API</a>
@@ -672,7 +682,10 @@ const html = String.raw`<!doctype html>
       <button type="button" data-mobile-expand>AI Tools <span>⌄</span></button>
       <a class="mobile-sub" href="#composer" hidden>Video Agent</a>
       <a class="mobile-sub" href="#products" hidden>Canvas &amp; Drama Studio</a>
-      <a href="#models">Models</a>
+      <button type="button" data-mobile-expand>Models <span>⌄</span></button>
+      <a class="mobile-sub" href="#models" hidden>Seedance 2.5</a>
+      <a class="mobile-sub" href="#models" hidden>Wan 3.0</a>
+      <a class="mobile-sub" href="#models" hidden>MiniMax H3</a>
       <a href="#skills">MCP / Skill</a>
       <a href="#cta">Pricing</a>
       <button type="button" data-toast="Login is ready in the full Topview app.">Login</button>
