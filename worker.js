@@ -598,6 +598,11 @@ const html = String.raw`<!doctype html>
       .composer-tab { padding-inline: 6px; }
       .hero h1 { font-size: 30px; }
     }
+    .site-header { position: sticky !important; top: 0 !important; }
+    main { margin-top: -80px; }
+    @media (max-width: 1050px) {
+      main { margin-top: -60px; }
+    }
   </style>
 </head>
 <body>
@@ -947,6 +952,9 @@ const html = String.raw`<!doctype html>
   <script>
     const $ = (selector, root = document) => root.querySelector(selector);
     const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+    const announcementBar = $(".announcement-bar");
+    const siteHeader = $(".site-header");
+    if (announcementBar && siteHeader) siteHeader.parentNode.insertBefore(announcementBar, siteHeader);
     const toast = $("#toast");
     let toastTimer;
     function showToast(message) {
