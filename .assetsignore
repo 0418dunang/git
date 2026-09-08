@@ -5,6 +5,8 @@
 .assetsignore
 worker.js
 .playwright-cli/
+.chrome-*/
+tmp/
 output/
 backend/
 scripts/
